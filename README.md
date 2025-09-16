@@ -1,59 +1,49 @@
-<<<<<<< HEAD
-# dynamic-kanban
-=======
-# Dynamic Kanban Board (Vanilla JS)
+# 📝 Dynamic Kanban Board (Vanilla JS)
 
-A modular, framework-free Kanban board with HTML5 drag & drop and localStorage persistence.
-
-## Features
-- Create tasks with title + description
-- Three columns: **To Do**, **In Progress**, **Done**
-- Drag & drop tasks between columns
-- Persists to `localStorage` (key: `kanban_tasks_v1`)
-- Modular code: separate files for storage, rendering, drag & drop, and events
-- Reusable utilities (`dom.js`)
-
-## Structure
-```
-.
-├─ index.html          # App shell
-├─ styles.css          # UI styles
-└─ js/
-   ├─ main.js          # Bootstraps app & global state
-   ├─ storage.js       # LocalStorage wrapper
-   ├─ dom.js           # DOM utilities (el, uid, timeShort)
-   ├─ renderer.js      # Rendering & state mutation helpers
-   ├─ dnd.js           # Drag & drop behavior
-   └─ events.js        # Form & button event handlers
-```
-
-## Getting Started
-1. Download the ZIP and extract.
-2. Open `index.html` in a browser (double-click). No build step required.
-
-> If you serve via a local server (optional), any static server works (e.g., `npx serve .`).
-
-## Live Link (GitHub Pages)
-1. Create a new GitHub repository.
-2. Upload these files.
-3. In **Settings → Pages**, set **Branch: main / root**.  
-4. Your app will be live at `https://<your-username>.github.io/<repo-name>/`.
-
-## Submission Checklist
-- **Live link:** GitHub Pages URL
-- **Repo link:** the GitHub repository
-- **Zip file:** use the ZIP generated here
-- **Video:** record a short walkthrough:
-  - What GPT generated vs. what you edited
-  - Explain architecture and each module's role
-  - Show adding tasks, dragging, reloading persistence
-
-## Notes on Scalability
-- State lives in one place (`STATE.tasks`), mutations centralized in `renderer.js` helpers.
-- Adding features (edit/delete, filters, search, swimlanes) fits naturally by extending modules or adding new ones.
-- Storage versioning is isolated (swap `storageKey` or schema migration as needed).
+A lightweight, modular Kanban board built with **HTML, CSS, and Core JavaScript**.  
+Supports drag-and-drop task management and persists tasks with **localStorage**.
 
 ---
 
-© 2025-09-16
->>>>>>> 09f2079 (Initial Commit)
+## 🚀 Features
+- **Create Tasks**: Add title + description via a simple form.
+- **3 Columns**: To Do · In Progress · Done.
+- **Drag & Drop**: Move tasks seamlessly between columns.
+- **Persistence**: Tasks remain after page reload (saved to `localStorage`).
+- **Clear All**: Wipe the board instantly.
+- **No Frameworks**: Pure JavaScript modules.
+
+---
+
+## 📂 Project Structure
+
+.
+├── index.html        # Main HTML shell
+├── styles.css        # Styling (responsive & modern UI)
+├── js/
+│   ├── main.js       # App entry point + state initialization
+│   ├── storage.js    # LocalStorage wrapper
+│   ├── dom.js        # Utility helpers (el, uid, timeShort)
+│   ├── renderer.js   # Rendering logic + state mutations
+│   ├── dnd.js        # Drag-and-drop behavior
+│   └── events.js     # Form and button event handlers
+└── README.md
+
+---
+
+## ⚡ Getting Started
+
+### Run Locally
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/<your-username>/dynamic-kanban.git
+   cd dynamic-kanban
+
+   2.	Start a local server:
+   npx serve .
+# or
+python3 -m http.server 3000
+
+3.	Open http://localhost:3000 in your browser.
+
+ℹ️ Opening via file:// may block localStorage in some browsers. Always run with a server.
