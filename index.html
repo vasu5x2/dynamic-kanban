@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic Kanban Board</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Dynamic Kanban Board</h1>
+    <p class="subtitle">Core JS assignment • Drag tasks between columns • Persists in localStorage</p>
+  </header>
+
+  <main class="app-main">
+    <section class="task-form">
+      <h2>Create Task</h2>
+      <form id="taskForm" autocomplete="off">
+        <div class="field-row">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="e.g., Write project README" required maxlength="100" />
+        </div>
+        <div class="field-row">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3" placeholder="Optional: add more details..."></textarea>
+        </div>
+        <button id="addBtn" type="submit" class="btn primary">Add</button>
+        <button id="clearAllBtn" type="button" class="btn danger outline" title="Clear all tasks">Clear All</button>
+      </form>
+    </section>
+
+    <section class="board" id="board" aria-label="Kanban Board">
+      <div class="column" data-status="todo" aria-label="To Do">
+        <div class="column-header">
+          <h3>To Do</h3>
+          <span class="count" data-count="todo">0</span>
+        </div>
+        <div class="dropzone" data-status="todo" role="list"></div>
+      </div>
+      <div class="column" data-status="inprogress" aria-label="In Progress">
+        <div class="column-header">
+          <h3>In Progress</h3>
+          <span class="count" data-count="inprogress">0</span>
+        </div>
+        <div class="dropzone" data-status="inprogress" role="list"></div>
+      </div>
+      <div class="column" data-status="done" aria-label="Done">
+        <div class="column-header">
+          <h3>Done</h3>
+          <span class="count" data-count="done">0</span>
+        </div>
+        <div class="dropzone" data-status="done" role="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>
+      LocalStorage Key: <code>kanban_tasks_v1</code> •
+      Built with modular ES modules (no frameworks)
+    </small>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
